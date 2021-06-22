@@ -1,12 +1,6 @@
 import csv
-import env
-import psycopg2
 
-conn_string = f'host={env.PGHOST} port=5432 dbname={env.PGDATABASE} user={env.PGUSER} password={env.PGPASSWORD}'
-connection = psycopg2.connect(conn_string)
-cursor = connection.cursor()
-
-def etl_controle_sessao():
+def executar(cursor):
   print('Iniciando o ETL para a tabela controle_sessao')
 
   cursor.execute('select count(0) from controle_sessao')
@@ -42,7 +36,4 @@ def etl_controle_sessao():
         """)
 
       cursor.execute(''.join(inserts))
-      connection.commit()
       print(f'Finalizado o ETL para a tabela controle_sessao.')
-
-etl_controle_sessao()
