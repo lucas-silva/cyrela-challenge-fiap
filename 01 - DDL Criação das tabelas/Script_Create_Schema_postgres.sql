@@ -103,8 +103,7 @@ CREATE TABLE coobrigado (
 	ModifiedOn timestamptz NULL,
 	Ativo bit NULL,
 	CodClienteSap text NULL,
-  	CONSTRAINT log_coobrigado_pkey PRIMARY KEY (Id),
-	CONSTRAINT coobrigado_posicao_financeira_fkey FOREIGN KEY (Obra, Bloco, Unidade) references posicao_financeira (Obra, Bloco, Unidade)
+  	CONSTRAINT log_coobrigado_pkey PRIMARY KEY (Id)
 )
 
 CREATE TABLE parcela (
@@ -149,6 +148,5 @@ CREATE TABLE parcela (
 	TX_JUROS decimal(18, 2) NULL,
 	TX_ENCARGOS decimal(18, 2) NULL,
 	MotivoRenegociacao text NULL,
-	CONSTRAINT parcela_pkey PRIMARY KEY (Id_Contrato_Vencimento),
-	CONSTRAINT parcela_posicao_financeira_fkey FOREIGN KEY (Obra, Bloco, Unidade) REFERENCES posicao_financeira (Obra, Bloco, Unidade)
+	CONSTRAINT parcela_pkey PRIMARY KEY (Id_Contrato_Vencimento)
 )

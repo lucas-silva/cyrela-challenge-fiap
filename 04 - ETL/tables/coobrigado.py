@@ -1,5 +1,8 @@
 import csv
 
+def format_string(value):
+  return 'NULL' if value == 'NULL' else f"'{value}'"
+
 def executar(cursor):
   print('Iniciando o ETL para a tabela coobrigado')
 
@@ -20,20 +23,36 @@ def executar(cursor):
         if is_header:
           continue
 
-        # Id = row[0]
-        # DataAcesso = row[1]
-        # Hash = row[2]
-        # DataExpiracao = row[3]
-        # Cliente = row[4]
-        # TipoAcesso = row[5]
-        # LoginAtendente = row[6]
-        # TipoSessao = row[7]
-        # Origem = row[8]
-        
-        # inserts.append(f"""
-        #   insert into coobrigado (Id,DataAcesso,Hash,DataExpiracao,Cliente,TipoAcesso,LoginAtendente,TipoSessao,Origem)
-        #   values ({Id},'{DataAcesso}','{Hash}','{DataExpiracao}','{Cliente}',{TipoAcesso},'{LoginAtendente}',{TipoSessao},{Origem});
-        # """)
+        Id = row[0]
+        Obra = row[1]
+        Bloco = row[2]
+        Unidade = row[3]
+        Nome = row[4]
+        CPF_CNPJ = row[5]
+        PercentualParticipacao = row[6]
+        Principal = row[7]
+        CreatedOn = row[8]
+        ModifiedOn = row[9]
+        Ativo = row[10]
+        CodClienteSap = row[11]
 
-      #cursor.execute(''.join(inserts))
+        inserts.append(f"""
+          insert into coobrigado (Id,Obra,Bloco,Unidade,Nome,CPF_CNPJ,PercentualParticipacao,Principal,CreatedOn,ModifiedOn,Ativo,CodClienteSap)
+          values (
+            {format_string(Id)},
+            {format_string(Obra)},
+            {format_string(Bloco)},
+            {format_string(Unidade)},
+            {format_string(Nome)},
+            {format_string(CPF_CNPJ)},
+            {PercentualParticipacao},
+            {format_string(Principal)},
+            {format_string(CreatedOn)},
+            {format_string(ModifiedOn)},
+            {format_string(Ativo)},
+            {format_string(CodClienteSap)}
+          );
+        """)
+
+      cursor.execute(''.join(inserts))
       print(f'Finalizado o ETL para a tabela coobrigado.')
