@@ -6,7 +6,7 @@ ETAPA 2:
     criar o arquivo env.py na pasta 04 - ETL com as credenciais de banco
 
 ETEPA 3:
-    executar no seu terminal
+    executar no seu terminal:
 
     ```
     pipenv shell
