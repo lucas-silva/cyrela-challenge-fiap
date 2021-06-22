@@ -7,9 +7,12 @@ connection = psycopg2.connect(conn_string)
 cursor = connection.cursor()
 
 def etl_controle_sessao():
+  print('Iniciando o ETL para a tabela controle_sessao')
+
   cursor.execute('select count(0) from controle_sessao')
   (controle_sessao_count,) = cursor.fetchone()
   if controle_sessao_count > 0:
+    print('Pulando pois a tabela controle_sessao já está populada')
     return
 
   with open('02 - Dados contidos nas tabelas/Dados_Tabela_Controlesessao.csv') as csv_file:
@@ -40,5 +43,6 @@ def etl_controle_sessao():
 
       cursor.execute(''.join(inserts))
       connection.commit()
+      print(f'Finalizado o ETL para a tabela controle_sessao.')
 
 etl_controle_sessao()
