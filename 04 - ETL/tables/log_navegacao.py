@@ -20,20 +20,21 @@ def executar(cursor):
         if is_header:
           continue
 
-        # Id = row[0]
-        # DataAcesso = row[1]
-        # Hash = row[2]
-        # DataExpiracao = row[3]
-        # Cliente = row[4]
-        # TipoAcesso = row[5]
-        # LoginAtendente = row[6]
-        # TipoSessao = row[7]
-        # Origem = row[8]
-        
-        # inserts.append(f"""
-        #   insert into log_navegacao (Id,DataAcesso,Hash,DataExpiracao,Cliente,TipoAcesso,LoginAtendente,TipoSessao,Origem)
-        #   values ({Id},'{DataAcesso}','{Hash}','{DataExpiracao}','{Cliente}',{TipoAcesso},'{LoginAtendente}',{TipoSessao},{Origem});
-        # """)
+        Id = row[0]
+        Documentocliente = row[1]
+        Dataevento = row[2]
+        Tipoevento = row[3]
+        Tipoacesso = row[4]
+        Idatendente = row[5]
+        Pagina = row[6]
+        Atividade = row[7]
+        Logerro = row[8]
+        Origem = row[9]
 
-      #cursor.execute(''.join(inserts))
+        inserts.append(f"""
+           insert into log_navegacao (Id,Documentocliente,Dataevento,Tipoevento,Tipoacesso,Idatendente,Pagina,Atividade,Logerro,Origem)
+           values ({Id},'{Documentocliente}','{Dataevento}',{Tipoevento},{Tipoacesso},'{Idatendente}','{Pagina}','{Atividade}','{Logerro}',{Origem});
+         """)
+
+      cursor.execute(''.join(inserts))
       print(f'Finalizado o ETL para a tabela log_navegacao.')
