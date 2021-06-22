@@ -1,5 +1,8 @@
 import csv
 
+def format_string(value):
+  return 'NULL' if value == 'NULL' else f"'{value}'"
+
 def executar(cursor):
   print('Iniciando o ETL para a tabela parcela')
 
@@ -63,17 +66,53 @@ def executar(cursor):
         motivorenegociacao = row[40]        
         
         
-      inserts.append(f"""
+        inserts.append(f"""
         insert into parcela (obra,bloco,unidade,id_contrato_vencimento,contrato,datavencimento,valorprestacao,principal,jurostp,variacoes,seguros,descontos,multa,jurosmora,
         prorataindice,proratacontrato,valorpresente,indicereajuste,situacaoparcela,boletojm,vencimentojm,periodicidade,tipocontrato,tipoemprestimo,tipobloqueio,
         crm_processamentopendente,crm_operacao,crm_parcelaid,createdon,modifiedon,geradopor,idreneg,datarenegociacao,valorabono,valoracrescimo,vlrabonomulta,vlrabonojuros,
         vlrabonoprorata,tx_juros,tx_encargos,motivorenegociacao)
-        values ('{obra}','{bloco}','{unidade}','{id_contrato_vencimento}','{contrato}','{datavencimento}',{valorprestacao},{principal},{jurostp},{variacoes},{seguros},
-        {descontos},{multa},{jurosmora},{prorataindice},{proratacontrato},{valorpresente},'{indicereajuste}','{situacaoparcela}','{boletojm}','{vencimentojm}',
-        '{periodicidade}','{tipocontrato}','{tipoemprestimo}','{tipobloqueio}','{crm_processamentopendente}','{crm_operacao}','{crm_parcelaid}','{createdon}','{modifiedon}',
-        '{geradopor}',{idreneg},'{datarenegociacao}',{valorabono},{valoracrescimo},{vlrabonomulta},{vlrabonojuros},{vlrabonoprorata},{tx_juros},{tx_encargos},
-        '{motivorenegociacao}');
-      """)
+        values ({format_string(obra)},
+                {format_string(bloco)},
+                {format_string(unidade)},
+                {format_string(id_contrato_vencimento)},
+                {format_string(contrato)},
+                {format_string(datavencimento)},
+                {valorprestacao},
+                {principal},
+                {jurostp},
+                {variacoes},
+                {seguros},
+                {descontos},
+                {multa},
+                {jurosmora},
+                {prorataindice},
+                {proratacontrato},
+                {valorpresente},
+                {format_string(indicereajuste)},
+                {format_string(situacaoparcela)},
+                {format_string(boletojm)},
+                {format_string(vencimentojm)},
+                {format_string(periodicidade)},
+                {format_string(tipocontrato)},
+                {format_string(tipoemprestimo)},
+                {format_string(tipobloqueio)},
+                {format_string(crm_processamentopendente)},
+                {format_string(crm_operacao)},
+                {format_string(crm_parcelaid)},
+                {format_string(createdon)},
+                {format_string(modifiedon)},
+                {format_string(geradopor)},
+                {idreneg},
+                {format_string(datarenegociacao)},
+                {valorabono},
+                {valoracrescimo},
+                {vlrabonomulta},
+                {vlrabonojuros},
+                {vlrabonoprorata},
+                {tx_juros},
+                {tx_encargos},
+                {format_string(motivorenegociacao)});
+        """)
 
       cursor.execute(''.join(inserts))
       print(f'Finalizado o ETL para a tabela parcela.')
