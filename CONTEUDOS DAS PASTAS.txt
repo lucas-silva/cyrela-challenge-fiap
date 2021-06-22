@@ -1,0 +1,6 @@
+01 - DDL Criação das tabelas
+	Contém os scritps para criação das principais tabelas de interesse da Cyrela. Podem ser necessários ajustes para bancos específicos.
+02 - Dados contidos nas tabelas
+	Contém arquivos CSV com os dados que foram extraídos da tabela. Esses arquivos devem ser usados para preencher as tabelas que forem criadas om os DDLs da pasta 1. Esses CSVs não devem ser considerados fontes de dados, e sim em conjunto com as tabelas da pasta 1.
+03 - Planilhas de uso interno
+	São planilhas usadas internamente pela equipe Cyrela e que contém dados de interesse.
