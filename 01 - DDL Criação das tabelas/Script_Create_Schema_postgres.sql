@@ -147,6 +147,5 @@ CREATE TABLE parcela (
 	VLRABONOPRORATA decimal(18, 2) NULL,
 	TX_JUROS decimal(18, 2) NULL,
 	TX_ENCARGOS decimal(18, 2) NULL,
-	MotivoRenegociacao text NULL,
-	CONSTRAINT parcela_pkey PRIMARY KEY (Id_Contrato_Vencimento)
+	MotivoRenegociacao text NULL
 )
