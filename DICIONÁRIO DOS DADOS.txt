@@ -1,0 +1,37 @@
+Descrevendo as colunas da tabela PosicaoFinanceira:
+Obra - Dados que vem do sap. Obra pode ser a mesma coisa que empreendimentos.(algumas tabelas pode ser empreendimentos)
+Marca - Item registrado manualmente (Dados que possuem origem no Asccess). Os dados mesclados no Power BI.
+Unidade - Apartamento
+Empresa - Agrupamento das SPE. (1 empresa para N obras. (marca living))
+Chave - A chave é composta por: Empreendimento, bloco e unidade.
+Bloco é o agrupamento dos apartamentos.
+SituacaoUnidade: Q - quitada (já quitou todas as pendencias financeiras)
+		               VD - vendida (cliente assinou contrato)
+ValorVenda = VGV (Valor esperado) potencial. Quantidade de unidades vendidas.
+DataLiberacaoChaves - Liberando o empreendimento para começar entregar a chave.
+FormaPagamento - Dados registrados como ids que basicamente significam: Quitação a vista, financiamento bancário, alienação fiduciária(dar imóvel como garantia), securitização (clientes bons pagadores é vendido para securitizadora)
+FaseIncorporacao - flag 0 não e 1 sim
+DataCessao - Cliente quer vender imóvel que ainda está sendo lançado (ainda na planta) para terceiro. Venda de cedente para cessionário.
+DataDesembolso - Recurso(1 pagamento do contrato com o SAP do cliente para Cyrela) do cliente entra para a Cyrela.(sap cria contrato e cliente vai pagando). Linha por unidade
+StatusDistrato - 1 (sim) 0 (não)
+DataChaves - Quando cliente pegou a chave de fato
+IndicePreChaves E IndicePosChaves: Custos construção civil - pre entrega do empreendimento. (índices do mercado financeiro)
+SaldoDevedor - Tudo que a empresa tem para receber do cliente e o que está atrasado. Cenário onde temos o financiamento. O que o cliente ainda tem para pagar. (soma de total a receber e atrasados)
+Valor corrigido - multa e juros.
+TotalAtraso - Soma de todo saldo atrasado
+CRM_ProcessamentoPendente - falg (Identificação para o CRM se a base está atualizada)
+CRM_Operacao - controle do CRM
+CRM_PosicaoFinanceiraId - geração id automático tabela
+CreatedOn - controle CRM na base intermediaria na tabela
+ModifiedOn - controle CRM na base intermediaria na tabela
+ValorPago - Valor recebido pela Cyrela (pode deixar sem ser negativo na base)
+ValorPagoAtualizado - Valor sobre os índices financeiros
+TipoPagamento - Acampamento do pagamento. NULL = securitização não entra no CRM mas entra no SAP
+DataQuitacao - cliente quitou o saldo
+ValorQuitacao - valor paga da última prestação
+CRM_ProcessamentoPendenteRepasse - Controle de CRM de repasse
+Tabela de parcelas:
+Fluxo financeiro do cliente
+Cada linha é uma parcela, estipular os valores do encargo, separando por atributos com base no saldo devedor.
+Situação da unidade de forma detalhada.
+Os dados são bem complexos de entender mesmo, mas mandei aqui para vocês alguns pontos levantados em uma reunião com o pessoal da Cyrela que tive ontem para tentar ajudar vocês a compreender melhor os dados do negócio. As demais tabelas acredito que estão mais fáceis para a identificação do negócio. Se preocupem mais no processo desse trabalho de ETL e OLAP, os dados podem ser ajustados da melhor forma para vocês trabalharem (claro que respeitando a ação original do dado). Qualquer dúvida, só chamar turma!
