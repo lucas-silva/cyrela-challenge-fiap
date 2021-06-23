@@ -3,7 +3,7 @@
     acessar https://gitpod.io#https://github.com/lucas-silva/cyrela-challenge-fiap
 
 ### ETAPA 2:
-    criar o arquivo env.py na pasta 04 - ETL com as credenciais de banco do postgres
+    criar o arquivo env.py na pasta "04 - ETL" com as credenciais de banco do postgres
 
 ### ETEPA 3:
     executar no seu terminal na raiz do projeto:
