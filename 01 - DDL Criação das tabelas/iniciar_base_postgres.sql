@@ -150,7 +150,7 @@ CREATE TABLE parcela (
 	MotivoRenegociacao text NULL
 )
 
-create table obra (
+CREATE TABLE obra (
 	obra char(4),
 	empreendimento text,
 	uf char(2),
