@@ -149,3 +149,26 @@ CREATE TABLE parcela (
 	TX_ENCARGOS decimal(18, 2) NULL,
 	MotivoRenegociacao text NULL
 )
+
+create table obras (
+	obra char(4),
+	empreendimento text,
+	uf char(2),
+	empresa text
+)
+
+insert into obras (obra, empreendimento, uf, empresa) values ('6',   'SKY LIFE', 'GO', 'CYRELA');
+insert into obras (obra, empreendimento, uf, empresa) values ('12',  'CAIOBAS', 'ES', 'CYRELA');
+insert into obras (obra, empreendimento, uf, empresa) values ('22',  'SALVADOR SHOPPING BUSINESS', 'BA', 'CYRELA');
+insert into obras (obra, empreendimento, uf, empresa) values ('57',  'TORRE NORTE SHOPPING', 'BH', 'CYRELA');
+insert into obras (obra, empreendimento, uf, empresa) values ('67',  'SPLENDORE FAMILY CLUB', 'MG', 'CYRELA');
+insert into obras (obra, empreendimento, uf, empresa) values ('76',  'CYRELA FOR YOU', 'SP', 'LIVING');
+insert into obras (obra, empreendimento, uf, empresa) values ('91',  'YOU CLUBE RESIDENCIAL', 'SP', 'LIVING');
+insert into obras (obra, empreendimento, uf, empresa) values ('95',  'ESSENCIAL ESCRITÓRIOS', 'ES', 'LIVING');
+insert into obras (obra, empreendimento, uf, empresa) values ('135', 'MIRAI OFFICES - BELÉM', 'PA', 'LIVING');
+insert into obras (obra, empreendimento, uf, empresa) values ('151', 'LIVE BANDEIRANTES ALL SUITES', 'RJ', 'LIVING');
+insert into obras (obra, empreendimento, uf, empresa) values ('153', 'VITAMARE NEOVILLE FLORIANÓPOLIS', 'SC', 'LIVING');
+insert into obras (obra, empreendimento, uf, empresa) values ('174', 'LE PARC BOA VIAGEM' , 'PE', 'VIVAZ');
+insert into obras (obra, empreendimento, uf, empresa) values ('175', 'LIBER RESIDENCIAL CLUB', 'RJ', 'VIVAZ');
+insert into obras (obra, empreendimento, uf, empresa) values ('176', 'MEDPLEX BELO HORIZONTE', 'BH', 'VIVAZ');
+insert into obras (obra, empreendimento, uf, empresa) values ('177', 'LIVING EXCLUSIVE TUCURUVI', 'SP', 'VIVAZ'); 
