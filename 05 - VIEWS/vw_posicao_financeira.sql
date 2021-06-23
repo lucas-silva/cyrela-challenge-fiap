@@ -15,8 +15,14 @@ select
 	end as situacao,
 	pf.datavenda as data_venda,
 	pf.datachaves as data_pegou_chaves,
-	pf.dataquitacao as data_quitacao,
-	pf.dataquitacao - pf.datavenda as tempo_ate_quitar,
+	case
+		when pf.formapagamento = 0 then pf.datavenda
+		else pf.dataquitacao
+	end as data_quitacao,
+	case
+		when pf.formapagamento = 0 then 0
+		else DATE_PART('day', pf.dataquitacao - pf.datavenda)
+	end as dias_ate_quitar,
 	pf.valorvenda as valor,	
 	case
 		when pf.formapagamento = 0 then 'Quitação a Vista'
