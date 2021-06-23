@@ -25,7 +25,7 @@ select
 		when pf.formapagamento = 3 then 'Securitização'
 	end as forma_pagamento
 from posicao_financeira pf 
-inner join obras o on o.obra = pf.obra
+inner join obra o on o.obra = pf.obra
 left join coobrigado c on c.obra = pf.obra 
                           and c.bloco = pf.bloco 
                           and c.unidade = pf.unidade
