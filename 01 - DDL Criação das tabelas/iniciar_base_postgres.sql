@@ -160,7 +160,7 @@ CREATE TABLE obra (
 insert into obra (obra, empreendimento, uf, empresa) values ('6',   'SKY LIFE', 'GO', 'CYRELA');
 insert into obra (obra, empreendimento, uf, empresa) values ('12',  'CAIOBAS', 'ES', 'CYRELA');
 insert into obra (obra, empreendimento, uf, empresa) values ('22',  'SALVADOR SHOPPING BUSINESS', 'BA', 'CYRELA');
-insert into obra (obra, empreendimento, uf, empresa) values ('57',  'TORRE NORTE SHOPPING', 'BH', 'CYRELA');
+insert into obra (obra, empreendimento, uf, empresa) values ('57',  'TORRE NORTE SHOPPING', 'MT', 'CYRELA');
 insert into obra (obra, empreendimento, uf, empresa) values ('67',  'SPLENDORE FAMILY CLUB', 'MG', 'CYRELA');
 insert into obra (obra, empreendimento, uf, empresa) values ('76',  'CYRELA FOR YOU', 'SP', 'LIVING');
 insert into obra (obra, empreendimento, uf, empresa) values ('91',  'YOU CLUBE RESIDENCIAL', 'SP', 'LIVING');
@@ -170,5 +170,5 @@ insert into obra (obra, empreendimento, uf, empresa) values ('151', 'LIVE BANDEI
 insert into obra (obra, empreendimento, uf, empresa) values ('153', 'VITAMARE NEOVILLE FLORIANÓPOLIS', 'SC', 'LIVING');
 insert into obra (obra, empreendimento, uf, empresa) values ('174', 'LE PARC BOA VIAGEM' , 'PE', 'VIVAZ');
 insert into obra (obra, empreendimento, uf, empresa) values ('175', 'LIBER RESIDENCIAL CLUB', 'RJ', 'VIVAZ');
-insert into obra (obra, empreendimento, uf, empresa) values ('176', 'MEDPLEX BELO HORIZONTE', 'BH', 'VIVAZ');
+insert into obra (obra, empreendimento, uf, empresa) values ('176', 'MEDPLEX BELO HORIZONTE', 'MG', 'VIVAZ');
 insert into obra (obra, empreendimento, uf, empresa) values ('177', 'LIVING EXCLUSIVE TUCURUVI', 'SP', 'VIVAZ'); 
